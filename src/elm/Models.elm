@@ -5,13 +5,15 @@ import Routing
 
 
 type alias Model =
-    { players : List Player
-    , route : Routing.Route
+    { 
+        blogs : List Blog,
+        route : Routing.Route
     }
 
 
 initialModel : Routing.Route -> Model
 initialModel route =
-    { players = []
-    , route = route
+    { 
+        blogs = [],
+        route = route
     }

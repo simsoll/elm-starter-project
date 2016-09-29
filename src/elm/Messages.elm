@@ -1,7 +1,7 @@
 module Messages exposing (..)
 
-import Players.Messages
+import Posts.Messages
 
 
 type Msg
-    = PlayersMsg Players.Messages.Msg
+    =  Players.Messages.Msg

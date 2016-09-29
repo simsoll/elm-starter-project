@@ -3,21 +3,25 @@ module Routing exposing (..)
 import String
 import Navigation
 import UrlParser exposing (..)
-import Players.Models exposing (PlayerId)
+import Posts.Models exposing (PostId)
 
 
 type Route
-    = PlayersRoute
-    | PlayerRoute PlayerId
+    = HomeRoute
+    | About
+    | PostsRoute
+    | PostRoute PostId
     | NotFoundRoute
 
 
 matchers : Parser (Route -> a) a
 matchers =
     oneOf
-        [ format PlayersRoute (s "")
-        , format PlayerRoute (s "players" </> int)
-        , format PlayersRoute (s "players")
+        [ 
+            format HomeRoute (s ""),
+            format About (s "about"),
+            format PostsRoute (s "posts"),
+            format PostRoute (s "post" </> int)
         ]
 
 
